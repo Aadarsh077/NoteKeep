@@ -14,7 +14,7 @@ const NoteState = (props)=>{
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRhNmJjYWZmMWU5ZWZlNzkxN2U4ZjllIn0sImlhdCI6MTY4ODY1MzYzMn0._1mxOOvPkME_sNrI9CkvHSN-yUIJ417Lt_7XDCAqd7s'
+          'auth-token': localStorage.getItem('token')
         }
       });
       const json = await response.json()
@@ -29,7 +29,7 @@ const NoteState = (props)=>{
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRhNmJjYWZmMWU5ZWZlNzkxN2U4ZjllIn0sImlhdCI6MTY4ODY1MzYzMn0._1mxOOvPkME_sNrI9CkvHSN-yUIJ417Lt_7XDCAqd7s'
+          'auth-token': localStorage.getItem('token')
         },
         body: JSON.stringify({title, description, tag})
       });
@@ -44,7 +44,7 @@ const NoteState = (props)=>{
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
-          'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRhNmJjYWZmMWU5ZWZlNzkxN2U4ZjllIn0sImlhdCI6MTY4ODY1MzYzMn0._1mxOOvPkME_sNrI9CkvHSN-yUIJ417Lt_7XDCAqd7s'
+          'auth-token': localStorage.getItem('token')
         }
       })
       const json = response.json();
@@ -62,7 +62,7 @@ const NoteState = (props)=>{
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRhNmJjYWZmMWU5ZWZlNzkxN2U4ZjllIn0sImlhdCI6MTY4ODY1MzYzMn0._1mxOOvPkME_sNrI9CkvHSN-yUIJ417Lt_7XDCAqd7s'
+          'auth-token': localStorage.getItem('token')
         },
         body: JSON.stringify({title, description, tag})
       })
@@ -85,7 +85,7 @@ const NoteState = (props)=>{
 
 
     return (
-        <NoteContext.Provider value={{notes, setNotes, addNote, deleteNote, getNotes, editNote}}>
+        <NoteContext.Provider value={{notes, setNotes, addNote, deleteNote, getNotes, editNote }}>
             {props.children}
         </NoteContext.Provider>
     )
