@@ -1,5 +1,5 @@
 {
-  "name": "NoteKeep",
+  "name": "notekeep",
   "version": "1.0.0",
   "description": "NoteKeep - Your notes on the cloud.",
   "main": "index.js",
